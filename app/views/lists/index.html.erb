@@ -1,0 +1,9 @@
+<h1><%= @lists.name %></h1>
+<h2>--------------------------------------</h2>
+<ol>
+  <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list.id)%></li>
+  <% end %>
+</ol>
+
+<div><button onclick="window.location.href = 'http://localhost:3000/lists';">back to overview </button></div>
