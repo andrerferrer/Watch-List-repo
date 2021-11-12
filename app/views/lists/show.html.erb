@@ -5,8 +5,10 @@
   <% @list.bookmarks.each do |bookmark| %>
     <li><h4>Movie: <%= bookmark.movie.title%></h4></li>
     <li><h5>Comment: <%= bookmark.comment%></h5></li>
+    <%= link_to "Delete ⓧ", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
     <li><h4>-----------------------------</h4></li>
   <% end %>
 </ul>
+
 <div><%= link_to 'Create a bookmark', new_list_bookmark_path(@list.id)%> </div>
 <div><button onclick="window.location.href = 'http://localhost:3000/lists';">back to overview </button></div>
